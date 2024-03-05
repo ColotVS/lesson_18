@@ -50,6 +50,4 @@ public class lesson_18_09 {
     //Cow cow = new Cow();                                      //Ссылочное сужение типа можно провести и без проверки типа объекта.
     //Whale whale = (Whale) cow; // exception                   При этом, если в переменной cow хранился объект не класса Whale,
     //                                                          будет сгенерировано исключение — InvalidClassCastException.
-
-
 }
