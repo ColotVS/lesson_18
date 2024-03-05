@@ -53,14 +53,21 @@ public class lesson_18_08 {
     }
 
     public static void runWorkingProcess() {
-        Human human1 = (Human) astronauts.get(0);
-        Human human2 = (Human) astronauts.get(1);
-        Dog dog = (Dog) astronauts.get(2);
-        Cat cat = (Cat) astronauts.get(3);
-        pilot(human1);
-        pilot(human2);
-        createDirection(dog);
-        research(cat);
+        for (int i = 0; i < astronauts.size(); i++) {
+            Astronaut astronaut = astronauts.get(i);
+            if (astronaut instanceof Human human)
+            {
+                pilot(human);
+            }
+            else if (astronaut instanceof Dog dog)
+            {
+                createDirection(dog);
+            }
+            else if (astronaut instanceof Cat cat)
+            {
+                research(cat);
+            }
+        }
     }
 
     public static void pilot(Human human){
