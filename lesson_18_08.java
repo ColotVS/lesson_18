@@ -35,22 +35,51 @@ public class lesson_18_08 {
     //Подсказка:
     //Чтобы добавить объекты разных классов в один список, им нужен общий предок.
     //Унаследуй интересующие тебя классы от Astronaut. Кто угодно может стать исследователем космоса
+
+    //Все члены экипажа космического корабля находятся на борту, корабль успешно вышел в открытый космос.
+    //Команде пора приступить к выполнению своих обязанностей:
+    //Людям — пилотировать корабль, Собаке — заниматься навигацией, а Коту — исследовать открытый космос.
+    //
+    //Распредели обязанности членов экипажа в методе runWorkingProcess().
+    //
+    //Для этого достань из списка astronauts всех людей (ты знаешь, под какими индексами они находятся) и передай их в качестве аргументов методу pilot(Human human), собаку передай в метод createDirection(Dog dog), а кота — в метод research(Cat cat).
+    //Другие методы не изменяй.
     public static ArrayList<Astronaut> astronauts = new ArrayList<>();
 
     public static void main(String[] args) {
         createCrew();
         printCrewInfo();
+        runWorkingProcess();
     }
 
-    public static void createCrew(){
-        Astronaut humanOne = new Human();
-        Astronaut humanTwo = new Human();
-        Astronaut dog = new Dog();
-        Astronaut cat = new Cat();
-        astronauts.add(humanOne);
-        astronauts.add(humanTwo);
-        astronauts.add(dog);
-        astronauts.add(cat);
+    public static void runWorkingProcess() {
+        Human human1 = (Human) astronauts.get(0);
+        Human human2 = (Human) astronauts.get(1);
+        Dog dog = (Dog) astronauts.get(2);
+        Cat cat = (Cat) astronauts.get(3);
+        pilot(human1);
+        pilot(human2);
+        createDirection(dog);
+        research(cat);
+    }
+
+    public static void pilot(Human human){
+        System.out.println("Член экипажа " + human.getInfo() + " пилотирует корабль.");
+    }
+
+    public static void createDirection(Dog dog){
+        System.out.println("Член экипажа " + dog.getInfo() + " занимается созданием навигационного маршрута.");
+    }
+
+    public static void research(Cat cat){
+        System.out.println("Член экипажа " + cat.getInfo() + " исследует ближайшие планеты.");
+    }
+
+    public static void createCrew() {
+        astronauts.add(new Human());
+        astronauts.add(new Human());
+        astronauts.add(new Dog());
+        astronauts.add(new Cat());
     }
 
     public static void printCrewInfo() {
