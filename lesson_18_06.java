@@ -15,5 +15,4 @@ public class lesson_18_06 {
     //  Object o = new Whale();
     //  System.out.println(o.toString());   //На экран будет выведена надпись: Whale@da435a. Метод toString() унаследован от класса Object
 
-
 }
