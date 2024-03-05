@@ -95,16 +95,19 @@ class Astronaut {
     }
 }
 class Human extends Astronaut{
+    @Override
     public String getInfo(){
         return "Человек";
     }
 }
 class Cat extends Astronaut{
+    @Override
     public String getInfo(){
         return "Кот";
     }
 }
 class Dog extends Astronaut{
+    @Override
     public String getInfo(){
         return "Собака";
     }
